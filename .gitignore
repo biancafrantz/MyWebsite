@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 deploy_key
 deploy_key.pub
+deploy_key
+deploy_key.pub

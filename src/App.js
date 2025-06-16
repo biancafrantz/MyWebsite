@@ -59,38 +59,65 @@ function RotatingTitle() {
   );
 }
 
+function PuzzleDemo() {
+  const initialCode = `function sumTo(n) {
+  if (n <= 0) return 0;
+  return n;
+}`;
+
+  const correctCode = `function sumTo(n) {
+  if (n <= 0) return 0;
+  return n + sumTo(n - 1);
+}`;
+
+  const [code, setCode] = useState(initialCode);
+  const [message, setMessage] = useState('');
+  const [startTime, setStartTime] = useState(performance.now());
+  const [solved, setSolved] = useState(false);
+
+  const runCode = () => {
+    try {
+      // eslint-disable-next-line no-eval
+      eval(code + '\nwindow.__testResult = sumTo(5);');
+      if (window.__testResult === 15) {
+        const duration = ((performance.now() - startTime) / 1000).toFixed(2);
+        setMessage(`You solved the puzzle in ${duration} seconds! 🎉`);
+        setSolved(true);
+      } else {
+        setMessage('Incorrect result. Try again!');
+      }
+    } catch (err) {
+      setMessage('There was an error in your code - possibly syntax error.');
+    }
+  };
+
+  const resetPuzzle = () => {
+    setCode(initialCode);
+    setMessage('');
+    setSolved(false);
+    setStartTime(performance.now()); // ✅ restart the timer here
+  };
+
+  return (
+    <div className="code-demo">
+      <h3>Fix the function so that it returns the factorial of a number recursively:</h3>
+      <textarea
+        value={code}
+        onChange={(e) => setCode(e.target.value)}
+        rows={10}
+        cols={50}
+      />
+      <br />
+      <button onClick={runCode} disabled={solved}>Check Code</button>
+      <button onClick={resetPuzzle} style={{ marginLeft: '1rem' }}>Restart</button>
+      <div className="output"><strong>{message}</strong></div>
+    </div>
+  );
+}
+
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
-
-  const LiveCodeDemo = () => {
-    const [input, setInput] = useState('');
-    const [output, setOutput] = useState('');
-
-    const reverseRecursive = (str) => {
-      if (str.length <= 1) return str;
-      return reverseRecursive(str.slice(1)) + str[0];
-    };
-
-    const handleRun = () => {
-      setOutput(reverseRecursive(input));
-    };
-
-    return (
-      <div className="code-demo">
-        <h3>Let's reverse a string! </h3>
-        <textarea
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Type anything"
-        />
-        <button onClick={handleRun}>Run Code</button>
-        <div className="output">
-          <strong>Output:</strong> {output}
-        </div>
-      </div>
-    );
-  };
 
   return (
     <div className="App">
@@ -111,7 +138,10 @@ function App() {
             Passionate about solving problems and building thoughtful, efficient, and user-friendly software.
           </p>
         </div>  
-        <LiveCodeDemo />
+        <PuzzleDemo />
+        <div className="scroll-indicator">
+          <span className="arrow"></span>
+        </div>
       </section>
 
       <section id="projects" className="section">
@@ -200,7 +230,7 @@ function App() {
         <h2>Meet Bianca</h2>
         <div className="about-content">
           <p>
-            I’m a recent Computer Science graduate from UCF with a strong foundation in full-stack development, AI integration, and system-level programming. I love transforming ideas into real, functional software that helps people in meaningful ways.
+            I’m a recent Computer Science graduate from the University of Central FL with a strong foundation in full-stack development, AI integration, and system-level programming. I love transforming ideas into real, functional software that helps people in meaningful ways.
           </p>
           <p>
             I’m eager to broaden my experience and apply my skills in a software engineering role where I can contribute to building and improving impactful software. Through every project, I’ve learned the value of resilience, communication, and adaptability—and I’m excited to keep growing as a developer.

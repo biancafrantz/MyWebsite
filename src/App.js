@@ -60,14 +60,14 @@ function RotatingTitle() {
 }
 
 function PuzzleDemo() {
-  const initialCode = `function sumTo(n) {
+  const initialCode = `function factorial(n) {
   if (n <= 0) return 0;
   return n;
 }`;
 
-  const correctCode = `function sumTo(n) {
+  const correctCode = `function factorial(n) {
   if (n <= 0) return 0;
-  return n + sumTo(n - 1);
+  return n * factorial(n - 1);
 }`;
 
   const [code, setCode] = useState(initialCode);
@@ -78,7 +78,7 @@ function PuzzleDemo() {
   const runCode = () => {
     try {
       // eslint-disable-next-line no-eval
-      eval(code + '\nwindow.__testResult = sumTo(5);');
+      eval(code + '\nwindow.__testResult = factorial(5);');
       if (window.__testResult === 15) {
         const duration = ((performance.now() - startTime) / 1000).toFixed(2);
         setMessage(`You solved the puzzle in ${duration} seconds! 🎉`);
@@ -230,7 +230,7 @@ function App() {
         <h2>Meet Bianca</h2>
         <div className="about-content">
           <p>
-            I’m a recent Computer Science graduate from the University of Central FL with a strong foundation in full-stack development, AI integration, and system-level programming. I love transforming ideas into real, functional software that helps people in meaningful ways.
+            I’m a recent Computer Science graduate from the University of Central FL with a strong foundation in full-stack development, AI integration, and system-level programming. I am a puzzle lover and solving problems. I love transforming ideas into real, functional software that helps people in meaningful ways.
           </p>
           <p>
             I’m eager to broaden my experience and apply my skills in a software engineering role where I can contribute to building and improving impactful software. Through every project, I’ve learned the value of resilience, communication, and adaptability—and I’m excited to keep growing as a developer.

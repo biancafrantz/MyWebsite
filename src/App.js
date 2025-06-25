@@ -61,12 +61,12 @@ function RotatingTitle() {
 
 function PuzzleDemo() {
   const initialCode = `function factorial(n) {
-  if (n <= 0) return 0;
+  if (n <= 1) return 1;
   return n;
 }`;
 
   const correctCode = `function factorial(n) {
-  if (n <= 0) return 0;
+  if (n <= 1) return 1;
   return n * factorial(n - 1);
 }`;
 
@@ -78,8 +78,9 @@ function PuzzleDemo() {
   const runCode = () => {
     try {
       // eslint-disable-next-line no-eval
+      window.__testResult = undefined; // reset before eval
       eval(code + '\nwindow.__testResult = factorial(5);');
-      if (window.__testResult === 15) {
+      if (window.__testResult === 120) {
         const duration = ((performance.now() - startTime) / 1000).toFixed(2);
         setMessage(`You solved the puzzle in ${duration} seconds! 🎉`);
         setSolved(true);
@@ -95,7 +96,7 @@ function PuzzleDemo() {
     setCode(initialCode);
     setMessage('');
     setSolved(false);
-    setStartTime(performance.now()); // ✅ restart the timer here
+    setStartTime(performance.now()); // restart the timer here
   };
 
   return (
@@ -203,7 +204,21 @@ function App() {
           </ul>
         </div>
 
-        <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+        <div className="project">
+          <h3>College Event Web App (LAMP Stack)</h3>
+          <p>
+            A full-stack web application built for managing college events across universities, supporting student engagement through dynamic event visibility, RSO membership, and real-time interaction.
+          </p>
+          <ul>
+            <li>Deployed on a cloud-hosted Ubuntu server with a CI/CD pipeline</li>
+            <li>Implemented user roles (SuperAdmin, Admin, Student) with distinct access and permissions using session-based login</li>
+            <li>Integrated Google Maps API for event location selection with geocoding and autocomplete functionality</li>
+            <li>Supported RSO creation, membership approval, and event visibility based on role and university domain</li>
+            <li>Built a secure registration system with password hashing, input validation, and university domain enforcement</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem', textAlign: 'center' }}>
           <h3>Want to see more? Download my resume here</h3>
           <a href="/Resume_Bianca_Frantzeskakis.pdf" download className="download-button">📄 Download PDF</a>
           <a href="/Resume_Bianca_Frantzeskakis.docx" download className="download-button" style={{ marginLeft: '1rem' }}>📄 Download Word</a>

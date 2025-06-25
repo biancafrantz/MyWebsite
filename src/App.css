@@ -201,12 +201,15 @@ html {
 }
 
 .download-button {
-  margin-top: 1rem;
-  padding: 0.8rem 1.5rem;
+  padding: 0.7rem 1.5rem;
   background-color: #333;
   color: white;
   border-radius: 8px;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
 }
 
 .project {
@@ -313,6 +316,7 @@ html {
   object-position: center;
   align-items: center;
   transform: scale(2); /* zoom in */
+  margin-top: 1.5rem;
   margin-left: 1rem;
   object-position: top; 
 }
@@ -371,6 +375,6 @@ html {
   text-align: center;
   font-size: 0.8rem;
   color: #030303;
-  margin-top: 4rem;
+  margin-top: 3rem;
   padding-bottom: 1rem;
 }

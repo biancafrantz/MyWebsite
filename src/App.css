@@ -12,8 +12,8 @@ body, html {
     to bottom,
     #C0EBFE 0%,      /* light blue starts */
     #C0EBFE 25%,     /* light blue stretches to 25% */
-    #f8e6d4 50%,     /* peach starts at 25%-50% */
-    #f7b1c1 75%,     /* pink from 50%-75% */
+    #f8e6d4 50%,     /* peach starts at 50% */
+    #f7b1c1 75%,     /* pink from 75% */
     #a281f5 100%     /* purple finishes at the bottom */
   );
   display: flex;
@@ -24,6 +24,13 @@ body, html {
 
 html {
   scroll-behavior: smooth;
+}
+
+.banner {
+  width: 100%;
+  height: 145px;
+  background-size: cover;
+  background-position: center;
 }
 
 .sidebar {
@@ -105,6 +112,7 @@ html {
   text-align: center;
   min-height: 100vh;
   position: relative;
+  margin-top: 1rem;
 }
 
 .hero-content h1 {
@@ -118,59 +126,18 @@ html {
 .hero-content h1 span.rotating-title {
   display: inline-block;
   text-align: center;
-  padding-bottom:0.5rem;
+  padding-bottom: 1rem;
 }
 
 .hero-content p {
   font-size: 1.2rem;
   max-width: 600px;
-  margin-bottom: 3rem;
-}
-
-.code-demo {
-  background: #1e1e1e;
-  color: #cfcfcf;
-  padding: 1rem;
-  border-radius: 10px;
-  max-width: 600px;
-  width: 90%;
-  font-family: 'Mooli', monospace;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
-  margin-top: 0.5rem;
-}
-
-.code-demo textarea {
-  width: 100%;
-  height: 80px;
-  padding: 0.5rem;
-  background: #2e2e2e;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  resize: none;
-  margin-top: 0.5rem;
-}
-
-.code-demo button {
+  margin-bottom: 1.75rem;
   margin-top: 1rem;
-  background-color: #0b84ff;
-  border: none;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.code-demo .output {
-  margin-top: 1rem;
-  background: #111;
-  padding: 0.5rem;
-  border-radius: 5px;
 }
 
 .scroll-indicator {
-  position: absolute;
+  position: relative;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
@@ -200,16 +167,50 @@ html {
   }
 }
 
-.download-button {
-  padding: 0.7rem 1.5rem;
-  background-color: #333;
+.code-demo {
+  color: #000000;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  height: 350px;
+  font-family: 'Mooli', monospace;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.code-demo textarea {
+  width: 90%;
+  height: 80px;
+  padding: 0.5rem;
+  background: #2e2e2e;
   color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  white-space: nowrap;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+  margin-top: 0.5rem;
+}
+
+.code-demo button {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: #09437e;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.code-demo .output {
+  margin-top: 1rem;
+  background: #111;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  height: 1.5rem;
 }
 
 .project {
@@ -228,6 +229,114 @@ html {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.project-media {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.project-media video,
+.project-media iframe {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.project-media.slideshow {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+}
+
+.project-media.slideshow img {
+  width: 100%;
+  max-width: 700px;
+  height: 400px;        /* force uniform height */
+  object-fit: cover;    /* crop instead of stretching */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
+.project-media.slideshow img.active {
+  display: block;
+  animation: fade 0.8s ease-in-out;
+}
+
+.project-media.slideshow img.inactive {
+  display: none;
+}
+
+@keyframes fade {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+.project-media.slideshow .controls {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.project-media.slideshow .controls button {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.project-media.slideshow .counter {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.project-text {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers horizontally */
+  text-align: center; /* centers text inside */
+}
+
+#connect {
+  padding-top: 1rem; /* smaller top padding */
+}
+
+.resume-downloads {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* space between buttons */
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.download-button {
+  padding: 0.7rem 1rem;
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  width: 200px;
 }
 
 .socials a {
@@ -264,7 +373,6 @@ html {
 }
 
 .contact-form {
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

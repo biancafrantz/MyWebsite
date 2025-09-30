@@ -3,13 +3,14 @@ import { useState, useEffect } from 'react';
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import personalPhoto from './assets/personalPhoto.jpg';
+import ImageSlideshow from "./ImageSlideshow";
 
 const titles = [
     "Bianca Frantzeskakis",
     "a problem solver",
     "a software developer",
     "a builder of ideas",
-    "an aspiring software engineer",
+    "a resilient innovator",
     "a lifelong learner",
     "a creative technologist"
   ];
@@ -100,7 +101,14 @@ function PuzzleDemo() {
   };
 
   return (
-    <div className="code-demo">
+    <div
+      className="code-demo"
+      style={{
+        backgroundImage: 'url(/assets/sky.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
       <h3>Fix the function so that it returns the factorial of a number recursively:</h3>
       <textarea
         value={code}
@@ -119,9 +127,22 @@ function PuzzleDemo() {
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const compilerImages = [
+    "/assets/compiler1.png",
+    "/assets/compiler2.png",
+    "/assets/compiler3.png"
+  ];
+  const arduinoImages = [
+    "/assets/arduino1.jpg",
+    "/assets/arduino2.jpg",
+    "/assets/arduino_code.png"
+  ];
+
 
   return (
     <div className="App">
+      <div className="banner" style={{ backgroundImage: 'url(/assets/banner.jpg)' }} />
+
       <button className="toggle-button" onClick={toggleSidebar}>
         ☰
       </button>
@@ -134,19 +155,24 @@ function App() {
 
       <section id="hero" className="hero-section">
         <div className="hero-content">
-          <h1>Hello, I am <RotatingTitle /></h1>
+          <h1>Hello, world!</h1>
+          <h1>I am <RotatingTitle/></h1>
           <p>
             Passionate about solving problems and building thoughtful, efficient, and user-friendly software.
           </p>
+          <p>
+            Let's start off with a little puzzle for my coders! You can also navigate to other sections using the sidebar.
+          </p>
+          <div className="scroll-indicator">
+            <span className="arrow"></span>
+          </div>
         </div>  
         <PuzzleDemo />
-        <div className="scroll-indicator">
-          <span className="arrow"></span>
-        </div>
       </section>
 
       <section id="projects" className="section">
         <h2>Projects</h2>
+        
         <div className="project">
           <h3>Social Sense Mobile App</h3>
           <p>
@@ -158,6 +184,12 @@ function App() {
             <li>Used AWS Rekognition to analyze facial expressions for emotion practice</li>
             <li>Designed a gamified experience with a points system, in-app shop, and customizable avatar accessories</li>
           </ul>
+          <div className="project-media">
+            <video controls>
+              <source src="/assets/Final_Showcase_Recording.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
 
         <div className="project">
@@ -169,6 +201,7 @@ function App() {
             <li>Measured and displayed real-time temperature and humidity data on a breadboard setup</li>
             <li>Diagnosed and fixed hardware connectivity issues preventing sensor data display</li>
           </ul>
+          <ImageSlideshow images={arduinoImages} />
         </div>
 
         <div className="project">
@@ -179,7 +212,11 @@ function App() {
           <ul>
             <li>Built a mini-compiler following detailed specifications using Bison for parser generation</li>
             <li>Implemented a custom compiler with full type-checking and parsing functionality</li>
+            <li>Configured and tested builds in a virtual machine environment</li>
+            <li>Gained experience with the full compiler pipeline, from lexical analysis to code parsing and error handling</li>
+            <li>Designed and tested context-free grammar rules to generate valid parse trees (example: derivation of "aacdbb")</li>
           </ul>
+          <ImageSlideshow images={compilerImages} />
         </div>
 
         <div className="project">
@@ -191,6 +228,12 @@ function App() {
             <li>Designed and managed the backend database schema for contact storage and retrieval</li>
             <li>Collaborated with a team of 6, contributing to both backend and frontend development</li>
           </ul>
+          <div className="project-media">
+            <video controls>
+              <source src="/assets/contact_wizard_demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
 
         <div className="project">
@@ -216,12 +259,16 @@ function App() {
             <li>Supported RSO creation, membership approval, and event visibility based on role and university domain</li>
             <li>Built a secure registration system with password hashing, input validation, and university domain enforcement</li>
           </ul>
-        </div>
-
-        <div style={{ marginTop: '1rem', textAlign: 'center' }}>
-          <h3>Want to see more? Download my resume here</h3>
-          <a href="/Resume_Bianca_Frantzeskakis.pdf" download className="download-button">📄 Download PDF</a>
-          <a href="/Resume_Bianca_Frantzeskakis.docx" download className="download-button" style={{ marginLeft: '1rem' }}>📄 Download Word</a>
+          <div class="project-media">
+            <video controls>
+              <source src="/assets/college_event_demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="project-text">
+            <p>Here is a report with more info on this project.</p>
+            <a href="/CollegeEvent_report.pdf" download className="download-button"> 📄 Download College Event Report </a>
+          </div>
         </div>
       </section>
 
@@ -236,6 +283,12 @@ function App() {
 
         <h3 style={{ marginTop: '2rem' }}>Or get in touch now!</h3>
         <ContactForm />
+
+        <div className="resume-downloads">
+          <h3>Download my resume here:</h3>
+          <a href="/Resume_Bianca_Frantzeskakis.pdf" download className="download-button"> 📄 Download PDF </a>
+          <a href="/Resume_Bianca_Frantzeskakis.docx" download className="download-button"> 📄 Download Word </a>
+        </div>
       </section>
 
       <section id="about" className="section about">

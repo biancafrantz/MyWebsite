@@ -13,6 +13,7 @@ Feel free to explore the code, and reach out via my website if you have any feed
 ### Tech Stack
 
 - React  
+- JavaScript
 - CSS  
 - DigitalOcean for hosting  
 - Nginx + GitHub for deployment

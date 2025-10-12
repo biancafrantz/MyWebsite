@@ -185,10 +185,14 @@ function App() {
             <li>Designed a gamified experience with a points system, in-app shop, and customizable avatar accessories</li>
           </ul>
           <div className="project-media">
-            <video controls>
-              <source src="/assets/Final_Showcase_Recording.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <iframe 
+              src="https://drive.google.com/file/d/1RS4zjTBSjNsI9w9gX2Hx9T-58AUGeMZW/preview" 
+              width="640" 
+              height="480" 
+              allow="autoplay"
+              allowFullScreen
+              title="Social Sense Project Demo Video"
+            ></iframe>
           </div>
         </div>
 
@@ -229,10 +233,14 @@ function App() {
             <li>Collaborated with a team of 6, contributing to both backend and frontend development</li>
           </ul>
           <div className="project-media">
-            <video controls>
-              <source src="/assets/contact_wizard_demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <iframe 
+              src="https://drive.google.com/file/d/11-4EwGYv03PLeBWjWPvaiMtJfXXvb2lf/preview" 
+              width="640" 
+              height="480" 
+              allow="autoplay"
+              allowFullScreen
+              title="Contact Wizard Project Demo Video"
+            ></iframe>
           </div>
         </div>
 
@@ -260,10 +268,14 @@ function App() {
             <li>Built a secure registration system with password hashing, input validation, and university domain enforcement</li>
           </ul>
           <div class="project-media">
-            <video controls>
-              <source src="/assets/college_event_demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <iframe 
+              src="https://drive.google.com/file/d/1aVhY-VrjlzrDcY1lFVymWlfUuM19XyKe/preview" 
+              width="640" 
+              height="480" 
+              allow="autoplay"
+              allowFullScreen
+              title="College Event Project Demo Video"
+            ></iframe>
           </div>
           <div class="project-text">
             <p>Here is a report with more info on this project.</p>

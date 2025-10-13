@@ -128,12 +128,12 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   const compilerImages = [
-    "/assets/compiler1.png",
+    "/assets/compiler1.png", 
     "/assets/compiler2.png",
     "/assets/compiler3.png"
   ];
   const arduinoImages = [
-    "https://lh3.googleusercontent.com/d/1gp8qhjVbkDpfBrpLp4W0ruq0eRVJBigr",
+    "https://lh3.googleusercontent.com/d/1gp8qhjVbkDpfBrpLp4W0ruq0eRVJBigr", 
     "https://lh3.googleusercontent.com/d/1_JfSMaKvv9N7DEgr44gtVvTb2W3VLA8m",
     "https://lh3.googleusercontent.com/d/1tVjUOn2xPuXywJsB8wd5ItkISVgRkrmG"
   ];

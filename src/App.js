@@ -133,9 +133,9 @@ function App() {
     "/assets/compiler3.png"
   ];
   const arduinoImages = [
-    "/assets/arduino1.jpg",
-    "/assets/arduino2.jpg",
-    "/assets/arduino_code.png"
+    "https://lh3.googleusercontent.com/d/1gp8qhjVbkDpfBrpLp4W0ruq0eRVJBigr",
+    "https://lh3.googleusercontent.com/d/1_JfSMaKvv9N7DEgr44gtVvTb2W3VLA8m",
+    "https://lh3.googleusercontent.com/d/1tVjUOn2xPuXywJsB8wd5ItkISVgRkrmG"
   ];
 
 

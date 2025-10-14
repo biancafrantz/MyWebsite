@@ -104,7 +104,7 @@ function PuzzleDemo() {
     <div
       className="code-demo"
       style={{
-        backgroundImage: 'url(https://lh3.googleusercontent.com/d/1BYIk16Q3eRmo4VzgVtXgxpOxRUD3rKyc)',
+        backgroundImage: 'url(/assets/sky.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
@@ -128,12 +128,12 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   const compilerImages = [
-    "https://lh3.googleusercontent.com/d/1MJa8vS2AHBwYyHaPPU6nrJYoOFIPgdCc", 
-    "https://lh3.googleusercontent.com/d/125XqQK5rFVMQ4IYYLcr5_MIRu0xdAUkV",
-    "https://lh3.googleusercontent.com/d/1Pt1UayVhogk-8NqMq6QKfG7SBvTJ5lIW"
+    "/assets/compiler1.png", 
+    "/assets/compiler2.png",
+    "/assets/compiler3.png"
   ];
   const arduinoImages = [
-    "https://lh3.googleusercontent.com/d/1gp8qhjVbkDpfBrpLp4W0ruq0eRVJBigr",
+    "https://lh3.googleusercontent.com/d/1gp8qhjVbkDpfBrpLp4W0ruq0eRVJBigr", 
     "https://lh3.googleusercontent.com/d/1_JfSMaKvv9N7DEgr44gtVvTb2W3VLA8m",
     "https://lh3.googleusercontent.com/d/1tVjUOn2xPuXywJsB8wd5ItkISVgRkrmG"
   ];
@@ -141,7 +141,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="banner" style={{ backgroundImage: 'url(https://lh3.googleusercontent.com/d/1-dyhQ9NfeQ1zoj8qgjoBgSGvNwRo-GcM)' }} />
+      <div className="banner" style={{ backgroundImage: 'url(/assets/banner.jpg)' }} />
 
       <button className="toggle-button" onClick={toggleSidebar}>
         ☰
@@ -305,7 +305,7 @@ function App() {
 
       <section id="about" className="section about">
         <div className="about-header">
-          <img src={'url(https://lh3.googleusercontent.com/d/1Xusz-cMCWCKmaw46SLiMjAiUFMm2jyVN)'} alt="Bianca wearing glasses and smiling" className="profile-photo"/>
+          <img src={personalPhoto} alt="Bianca wearing glasses and smiling" className="profile-photo"/>
         </div>
         <h2>Meet Bianca</h2>
         <div className="about-content">

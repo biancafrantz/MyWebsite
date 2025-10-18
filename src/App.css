@@ -78,6 +78,12 @@ html {
   box-sizing: border-box;
 }
 
+.rotating-title-wrapper {
+  display: inline-block;
+  position: relative;
+  min-height: 1.5em;
+}
+
 .rotating-title {
   display: inline-block;
   overflow: hidden;
@@ -127,6 +133,12 @@ html {
   display: inline-block;
   text-align: center;
   padding-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
 }
 
 .hero-content p {
@@ -256,8 +268,8 @@ html {
 .project-media.slideshow img {
   width: 100%;
   max-width: 700px;
-  height: 400px;        /* force uniform height */
-  object-fit: cover;    /* crop instead of stretching */
+  height: 400px;
+  object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   display: none;
@@ -308,6 +320,17 @@ html {
   z-index: 2;
 }
 
+@media (max-width: 600px) {
+  .project-media iframe,
+  .project-media video,
+  .project-media.slideshow img {
+    max-width: 100%;
+    aspect-ratio: auto;
+    border-radius: 6px;
+    height: 16rem;
+  }
+}
+
 .project-text {
   margin-top: 1rem;
   display: flex;
@@ -337,6 +360,23 @@ html {
   text-decoration: none;
   text-align: center;
   width: 200px;
+}
+
+.download-project {
+  padding: 0.5rem 0.8rem;
+  background-color: #444;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  width: fit-content;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.download-project:hover {
+  background-color: #555;
+  transform: translateY(-2px);
 }
 
 .socials a {
@@ -386,6 +426,7 @@ html {
   border: none;
   border-radius: 6px;
   font-size: 0.85rem;
+  font-family: 'Mooli', serif;
 }
 
 .contact-form button {

@@ -133,9 +133,9 @@ function App() {
     "/assets/compiler3.png"
   ];
   const arduinoImages = [
-    "https://lh3.googleusercontent.com/d/1gp8qhjVbkDpfBrpLp4W0ruq0eRVJBigr", 
-    "https://lh3.googleusercontent.com/d/1_JfSMaKvv9N7DEgr44gtVvTb2W3VLA8m",
-    "https://lh3.googleusercontent.com/d/1tVjUOn2xPuXywJsB8wd5ItkISVgRkrmG"
+    "/assets/arduino1.jpg", 
+    "/assets/arduino2.jpg",
+    "/assets/arduino_code.png"
   ];
 
 
@@ -156,7 +156,12 @@ function App() {
       <section id="hero" className="hero-section">
         <div className="hero-content">
           <h1>Hello, world!</h1>
-          <h1>I am <RotatingTitle/></h1>
+          <h1>
+            I am{" "}
+            <span className="rotating-title-wrapper">
+              <RotatingTitle />
+            </span>
+          </h1>
           <p>
             Passionate about solving problems and building thoughtful, efficient, and user-friendly software.
           </p>
@@ -188,7 +193,7 @@ function App() {
             <iframe 
               src="https://drive.google.com/file/d/1RS4zjTBSjNsI9w9gX2Hx9T-58AUGeMZW/preview" 
               width="640" 
-              height="480" 
+              height="300" 
               allow="autoplay"
               allowFullScreen
               title="Social Sense Project Demo Video"
@@ -236,7 +241,7 @@ function App() {
             <iframe 
               src="https://drive.google.com/file/d/11-4EwGYv03PLeBWjWPvaiMtJfXXvb2lf/preview" 
               width="640" 
-              height="480" 
+              height="365" 
               allow="autoplay"
               allowFullScreen
               title="Contact Wizard Project Demo Video"
@@ -247,7 +252,7 @@ function App() {
         <div className="project">
           <h3>Habit Tracker Web & Mobile App (MERN Stack)</h3>
           <p>
-            Another group project in object-oriented software development using modern full-stack JavaScript tools to create a habit-tracking application with cross-platform functionality.
+            Another group project in object-oriented software development using modern full-stack TypeScript tools to create a habit-tracking application with cross-platform functionality.
           </p>
           <ul>
             <li>Built with MongoDB, Express, React, and Node.js to support both web and mobile usage</li>
@@ -271,15 +276,14 @@ function App() {
             <iframe 
               src="https://drive.google.com/file/d/1aVhY-VrjlzrDcY1lFVymWlfUuM19XyKe/preview" 
               width="640" 
-              height="480" 
+              height="350" 
               allow="autoplay"
               allowFullScreen
               title="College Event Project Demo Video"
             ></iframe>
           </div>
           <div class="project-text">
-            <p>Here is a report with more info on this project.</p>
-            <a href="/CollegeEvent_report.pdf" download className="download-button"> 📄 Download College Event Report </a>
+            <a href="/CollegeEvent_report.pdf" download className="download-project"> 📄 Download College Event Report </a>
           </div>
         </div>
       </section>
@@ -310,7 +314,7 @@ function App() {
         <h2>Meet Bianca</h2>
         <div className="about-content">
           <p>
-            I’m a recent Computer Science graduate from the University of Central FL with a strong foundation in full-stack development, AI integration, and system-level programming. I am a puzzle lover and solving problems. I love transforming ideas into real, functional software that helps people in meaningful ways.
+            I’m a recent Computer Science graduate from the University of Central FL with a strong foundation in full-stack development, AI integration, and system-level programming. I am a lover of puzzles and solving problems. I love transforming ideas into real, functional software that helps people in meaningful ways.
           </p>
           <p>
             I’m eager to broaden my experience and apply my skills in a software engineering role where I can contribute to building and improving impactful software. Through every project, I’ve learned the value of resilience, communication, and adaptability—and I’m excited to keep growing as a developer.

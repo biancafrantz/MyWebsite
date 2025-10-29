@@ -33,6 +33,18 @@ html {
   background-position: center;
 }
 
+@media (min-width: 1200px) {
+  .banner {
+    height: 165px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .banner {
+    height: 250px;
+  }
+}
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -141,11 +153,26 @@ html {
   }
 }
 
+@media (min-width: 1400px) {
+  .hero-content h1 {
+    font-size: 3.35rem;
+  }
+}
+
 .hero-content p {
   font-size: 1.2rem;
   max-width: 600px;
   margin-bottom: 1.75rem;
   margin-top: 1rem;
+}
+
+@media (min-width: 1400px) {
+  .hero-content p {
+    font-size: 1.75rem;
+    max-width: 820px;
+    margin-bottom: 2rem;
+    margin-top: 1.75rem;
+  }
 }
 
 .scroll-indicator {

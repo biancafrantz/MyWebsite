@@ -179,13 +179,40 @@ function App() {
         <h2>Projects</h2>
         
         <div className="project">
+          <h3>Potions N Puzzles</h3>
+          <p>
+            A 2D puzzle adventure game developed for the Girls Who Code Fall Projects showcase, featuring interactive rooms, collectible items, and handcrafted RPG-style puzzles.
+          </p>
+          <p><strong>🏆 Awarded 2nd place out of 20 teams at the showcase</strong></p>
+          <ul>
+            <li>Built using Godot Engine (GDScript) with a modular room-based architecture and reusable interaction systems</li>
+            <li>Developed core mechanics for the Greenhouse Room, including ingredient collection, mixing logic, and puzzle progression</li>
+            <li>Implemented the ordered ingredient-mixing system (rose → soil → dew drop) with inventory validation and feedback dialogue</li>
+            <li>Added interaction handling through custom InteractionArea nodes for pickups, mixing, and dialogue triggers</li>
+            <li>Contributed to player movement and inventory features, including pickup behavior, slot tracking, dialogue sounds, background music, and UI debugging</li>
+          </ul>
+          <div className="project-media">
+            <iframe 
+              src="https://drive.google.com/file/d/1D6h5e_zxWQP9a7QT8fgGO3aGfVTuLCXZ/preview" 
+              width="640" 
+              height="300" 
+              allow="autoplay"
+              allowFullScreen
+              title="Potions N Puzzles Project Demo Video"
+            ></iframe>
+          </div>
+        </div>
+        
+        <div className="project">
           <h3>Social Sense Mobile App</h3>
           <p>
             A senior design project aimed at helping children (ages 8–14) with autism or other learning disabilities improve their social skills through an interactive mobile experience.
           </p>
+          <p><strong>🏆 Selected as a finalist among senior design projects</strong></p>
           <ul>
             <li>Developed with a team of 5 using Firebase for authentication and Firestore for real-time user data management</li>
             <li>Integrated OpenAI-powered conversational AI to simulate social interactions with an on-screen buddy</li>
+            <li>Created instances for fine-tuning conversational AI by designing dialogue flows and crafting interaction examples for realistic role-playing scenarios</li>
             <li>Used AWS Rekognition to analyze facial expressions for emotion practice</li>
             <li>Designed a gamified experience with a points system, in-app shop, and customizable avatar accessories</li>
           </ul>
@@ -207,8 +234,9 @@ function App() {
             A personal project exploring embedded systems and hardware integration using Arduino and DHT sensors.
           </p>
           <ul>
-            <li>Measured and displayed real-time temperature and humidity data on a breadboard setup</li>
-            <li>Diagnosed and fixed hardware connectivity issues preventing sensor data display</li>
+            <li>Configured the Arduino–breadboard circuit and connected it to the computer for real-time serial data monitoring</li>
+            <li>Measured and displayed real-time temperature and humidity data</li>
+            <li>Diagnosed and resolved hardware connectivity issues through research, testing, and iterative troubleshooting</li>
           </ul>
           <ImageSlideshow images={arduinoImages} />
         </div>
@@ -234,7 +262,8 @@ function App() {
             A group project in object-oriented software development, building a web app contact manager using PHP and MySQL.
           </p>
           <ul>
-            <li>Designed and managed the backend database schema for contact storage and retrieval</li>
+            <li>Designed and implemented the backend MySQL database schema, including tables, relationships, and queries for contact storage and retrieval</li>
+            <li>Assisted in shaping the UI by helping select the front-end layout and design direction for a clean, user-friendly interface</li>
             <li>Collaborated with a team of 6, contributing to both backend and frontend development</li>
           </ul>
           <div className="project-media">
@@ -256,7 +285,10 @@ function App() {
           </p>
           <ul>
             <li>Built with MongoDB, Express, React, and Node.js to support both web and mobile usage</li>
-            <li>Implemented key features like habit scheduling, progress tracking, and reminders</li>
+            <li>Implemented key features including habit creation, daily/weekly tracking visuals, and reminders</li>
+            <li>Focused on frontend development for the web app using React and TypeScript</li>
+            <li>Contributed to the mobile version by assisting with shared logic and helping adapt components for cross-platform compatibility</li>
+            <li>Collaborated within a full-stack MERN team, integrating frontend interfaces with backend API endpoints</li>
           </ul>
         </div>
 
